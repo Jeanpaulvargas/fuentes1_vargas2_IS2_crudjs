@@ -12,8 +12,14 @@
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="cliente_precio">Capital del cliente</label>
-                    <input type="number" step="0.01" min="0" name="cliente_precio" id="cliente_precio" class="form-control" required>
+                    <label for="cliente_apellido">Apellido del cliente</label>
+                    <input type="text" name="cliente_apellido" id="cliente_apellido" class="form-control" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="cliente_nit">Nit del cliente</label>
+                    <input type="number" step="0.01" min="0" name="cliente_nit" id="cliente_nit" class="form-control" required>
                 </div>
             </div>
             <div class="row justify-content-center mb-3">
@@ -42,7 +48,9 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Descripción</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Nit</th>
                         <th>Modificar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -57,8 +65,8 @@
     </div>
 </div>
 
-<!-- <script defer src="/Nueva carpeta/src/js/funciones.js"></script> -->
-<script defer src="/src/js/funciones.js"></script>
-<!-- <script defer src="/Nueva carpeta/src/js/clientes/index.js"></script> -->
-<script defer src="/src/js/clientes/index.js"></script>
+<script defer src="/fuentes1_vargas2_IS2_crudjs/src/js/funciones.js"></script> -->
+
+<script defer src="/fuentes1_vargas2_IS2_crudjs/src/js/clientes/index.js"></script>
+
 <?php include_once '../../includes/footer.php' ?>

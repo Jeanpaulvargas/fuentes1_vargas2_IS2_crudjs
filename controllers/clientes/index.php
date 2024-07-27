@@ -3,24 +3,34 @@
 require '../../models/cliente.php';
 header('Content-Type: application/json; charset=UTF-8');
 
+// echo json_encode($_GET);
+// exit;
 $metodo = $_SERVER['REQUEST_METHOD'];
-$tipo = $_REQUEST['tipo'];
-
 // echo json_encode($_GET);
 // exit;
 try {
     switch ($metodo) {
         case 'POST':
+            $tipo = $_REQUEST['tipo'];
             $cliente = new cliente($_POST);
             switch ($tipo) {
                 case '1':
-
                     $ejecucion = $cliente->guardar();
                     $mensaje = "Guardado correctamente";
                     break;
 
-                default:
+                case '2':
+                    $ejecucion = $cliente->modificar();
+                    $mensaje = "Modificado correctamente";
+                    break;
 
+                    case '3':
+                        $ejecucion = $cliente->eliminar();
+                        $mensaje = "Eliminado correctamente";
+                        break;
+                    
+
+                default:
                     break;
             }
             http_response_code(200);
@@ -30,9 +40,10 @@ try {
             ]);
             break;
         case 'GET':
+
             http_response_code(200);
             $cliente = new cliente($_GET);
-            $clientes = $producto->buscar();
+            $clientes = $cliente->buscar();
             echo json_encode($clientes);
             break;
 
